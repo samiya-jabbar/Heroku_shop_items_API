@@ -31,4 +31,4 @@ def get_item(name):
     if name!=name:
         return jsonify({'message': 'Item is not available in this shop'})
 
-app.run()
+app.run(debug=True, port=33507)

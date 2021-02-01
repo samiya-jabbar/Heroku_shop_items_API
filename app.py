@@ -1,4 +1,4 @@
-from flask import Flask, request, Response
+from flask import Flask, request, Response, jsonify
 from database.db import initialize_db
 from database.models import Items
 import json
@@ -36,4 +36,6 @@ def get_item(name):
     if name!=name:
         return jsonify({'message': 'Items is not available in this shop'})
 
-app.run()
+
+if __name__=="__main__":
+    app.run()

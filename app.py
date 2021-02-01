@@ -11,6 +11,11 @@ app.config['MONGODB_SETTINGS'] = {
 
 initialize_db(app)
 
+@app.route('/')
+def get_root():
+    return "hello world"
+
+
 @app.route('/samiya')
 def get_items():
     items = Items.objects().to_json()

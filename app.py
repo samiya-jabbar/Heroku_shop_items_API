@@ -13,15 +13,15 @@ initialize_db(app)
 
 @app.route('/')
 def get_root():
-    return "hello world"
+    return "<h1>Hello Welcome to our Shop, which item do you want to buy?<h1>"
 
 
-@app.route('/samiya')
+@app.route('/getitems')
 def get_items():
     items = Items.objects().to_json()
     return Response(items, mimetype="application/json", status=200)
 
-@app.route('/naufil', methods=['POST'])
+@app.route('/additem', methods=['POST'])
 def add_item():
     body = request.get_json()
     item = Items(**body).save()
@@ -33,8 +33,10 @@ def get_item(name):
     if name==name:
         items = Items.objects.get(name=name).to_json()
         return Response(items, mimetype="application/json", status=200)
-    if name!=name:
-        return jsonify({'message': 'Items is not available in this shop'})
+
+@app.errorhandler(500)
+def handle_500(e):
+    return '<h1>Sorry! the item you want to buy is not available in this shop<h1>'
 
 
 if __name__=="__main__":

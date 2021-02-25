@@ -1,8 +1,8 @@
-#This flask api is deployed on Heroku.
+# This flask api is deployed on Heroku.
 
 **Heroku app link : https://shop-items-api-at-heroku.herokuapp.com/**
 
-###Guide :
+### Guide :
 It works on following endpoints:
 
 1) /getitems 

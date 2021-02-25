@@ -1,4 +1,4 @@
-# This flask api is deployed on Heroku.
+# Flask api of calculator which is deployed on Heroku.
 
 **Heroku app link : https://shop-items-api-at-heroku.herokuapp.com/**
 
